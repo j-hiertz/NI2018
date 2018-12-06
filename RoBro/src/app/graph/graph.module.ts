@@ -6,8 +6,8 @@ import { GraphRoutingModule } from './graph-routing.module';
 @NgModule({
   declarations: [GraphComponent],
   imports: [
-    CommonModule,
-    GraphRoutingModule
-  ]
+  CommonModule,
+  GraphRoutingModule
+]
 })
 export class GraphModule { }
