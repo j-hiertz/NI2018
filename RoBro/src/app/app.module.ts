@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GraphsComponent } from './components/graphs/graphs';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GraphsComponent
   ],
   imports: [
     BrowserModule,
