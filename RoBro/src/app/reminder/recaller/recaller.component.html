@@ -1,0 +1,4 @@
+<p>Liste des rappels</p>
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let recall of recalls">{{ recall.title }} {{ recall.deadline }}</mat-list-item>
+</mat-list>
