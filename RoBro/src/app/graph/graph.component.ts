@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GraphComponent implements OnInit {
 
-  constructor() { }
+	private data: Object;
+	constructor() {
+		this.data = {
+			'2018': 34,
+			'2019': 23,
+			'2020': 30,
+			'2021': 14
+		};
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
