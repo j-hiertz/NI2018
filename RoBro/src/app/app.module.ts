@@ -11,12 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { GraphsComponent } from './components/graphs/graphs';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GraphsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
