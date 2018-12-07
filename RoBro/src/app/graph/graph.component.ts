@@ -11,6 +11,7 @@ export class GraphComponent implements OnInit {
 
   private chart: any;
   private datas: any;
+  private instant_datas: any;
   private title: String = 'Metéo pour votre localisation';
   @ViewChild('canvas') private chartRef: ElementRef;
 
@@ -20,6 +21,9 @@ export class GraphComponent implements OnInit {
   ngOnInit() {
       let my_position: any;
       this.datas = [];
+      this.instant_datas = {
+        humidity: 0
+      };
       this.meteoService.getPositionData().then((result) => {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
@@ -32,6 +36,12 @@ export class GraphComponent implements OnInit {
             this.title = `Metéo pour ${data['city']['name']}`;
             this.drawGraph();
         });
+
+        this.meteoService.getInstantMeteoData(my_position).subscribe((data: any) => {
+          this.instant_datas = {
+            humidity: data['main']['humidity']
+          };
+      });
       });
   }
 

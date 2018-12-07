@@ -17,3 +17,7 @@
 	<mat-card-title>{{ title }}</mat-card-title>
 	<canvas #canvas id="canvas" width="500px" height="500px" class="canvas">{{ chart }}</canvas>
 </mat-card>
+<mat-card class="cardGraph mat-elevation-z6">
+    <mat-card-title>Donnée en temps réel</mat-card-title>
+    <span>Humidité ambiente: {{ instant_datas.humidity }}</span>
+</mat-card>
