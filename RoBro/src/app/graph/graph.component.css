@@ -1,0 +1,10 @@
+.cardGraph {
+    height: 95%;
+    width: 45%;
+    margin: 20px;
+}
+
+#canvas {
+    height: auto;
+    width: auto;
+}

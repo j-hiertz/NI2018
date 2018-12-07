@@ -1,2 +1,19 @@
-<h1>{{ title }}</h1>
-<canvas #canvas id="canvas" width="500px" height="500px">{{ chart }}</canvas>
+<!--
+<div class="center-div">
+	<h1>{{ title }}</h1>
+	<canvas #canvas id="canvas" width="500px" height="500px">{{ chart }}</canvas>
+</div>
+.center-div{
+	 text-align: center;
+	 display: inline-block;
+	 width: 100%;
+}
+#canvas {
+	 margin: auto;
+}
+
+-->
+<mat-card class="cardGraph mat-elevation-z6">
+	<mat-card-title>{{ title }}</mat-card-title>
+	<canvas #canvas id="canvas" width="500px" height="500px" class="canvas">{{ chart }}</canvas>
+</mat-card>
