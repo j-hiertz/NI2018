@@ -23,15 +23,16 @@ export class GraphComponent implements OnInit {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
             data['list'].forEach((d) => {
+              console.log(d['dt_txt']);
               this.datas.push({
                 y: d['main']['temp'],
-                x: d['dt_txt']
+                x: new Date(d['dt_txt'])
               });
             });
             console.log(this.datas);
+            this.drawGraph();
         });
       });
-    this.drawGraph();
   }
 
   drawGraph() {
@@ -40,14 +41,18 @@ export class GraphComponent implements OnInit {
       data: {
           datasets: [{
               label: 'firstLabel',
-              data: [34, 32, 37, 28, 25],
+              data: this.datas
           }]
       },
       options: {
           responsive: false,
           scales: {
             xAxes: [{
-              display: true
+              display: true,
+              type: 'time',
+                time: {
+                    unit: 'hour'
+                }
             }],
             yAxes: [{
                 display: true
