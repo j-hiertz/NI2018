@@ -9,9 +9,9 @@ import { MeteoService } from '../services/meteo-services.service';
 })
 export class GraphComponent implements OnInit {
 
-  private chart: any;
-  private datas: any;
-  private title: String = 'Metéo pour votre localisation';
+  public chart: any;
+  public datas: any;
+  public title: String = 'Metéo pour votre localisation';
   @ViewChild('canvas') private chartRef: ElementRef;
 
   constructor(private meteoService: MeteoService) {

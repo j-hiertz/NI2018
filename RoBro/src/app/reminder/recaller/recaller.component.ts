@@ -8,7 +8,7 @@ import { Recall } from './recall.model';
   styleUrls: ['./recaller.component.css']
 })
 export class RecallerComponent implements OnInit {
-  private recalls: Recall[] = [];
+  public recalls: Recall[] = [];
 
   constructor(private recallerService: RecallerService) { }
 
