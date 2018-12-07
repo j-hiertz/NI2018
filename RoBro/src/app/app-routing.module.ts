@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: 'reminder', loadChildren: './reminder/reminder.module#ReminderModule' },
   { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
   { path: 'graph', loadChildren: './graph/graph.module#GraphModule' },
-  { path: 'not-found', loadChildren: './not-found/not-found.module'},
+  { path: 'not-found', loadChildren: './not-found/not-found.module#NotFoundModule'},
   { path: '**', redirectTo: 'not-found'}
 ];
 
