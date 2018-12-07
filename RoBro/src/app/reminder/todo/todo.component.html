@@ -1,7 +1,10 @@
 <mat-card class="cardTodo mat-elevation-z6">
-    <mat-card-title>Todo</mat-card-title>
-    <mat-list role="list">
-      <mat-list-item role="listitem" *ngFor="let todo of todos"><mat-checkbox (change)="removeTodo(todo)">{{ todo.title }}</mat-checkbox></mat-list-item>
-    </mat-list>
-</mat-card>
-
+    <mat-card-header>
+      <mat-card-title>To Do</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item role="listitem" *ngFor="let todo of todos"><mat-checkbox (change)="removeTodo(todo)">{{ todo.title }}</mat-checkbox></mat-list-item>
+      </mat-list> 
+    </mat-card-content>
+  </mat-card>
