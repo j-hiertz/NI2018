@@ -15,3 +15,21 @@ Groll Julien
 Hiertz Jordan
 
 Richard Pierre-Marie
+
+## Prérequis:
+ Il faut avoir installé **Node.js**.
+ 
+ 
+## Installation:
+* Clonez le repository. 
+* Déplacez-vous dans le répertoire RoBro. 
+* Exécutez la commande : `npm install` 
+* Exécutez la commande : `npm start` 
+* Allez à l'adresse `localhost:4200`
+* Enjoy ! 
+
+
+** La famille vous remercie et vous souhaite une bonne expérience héhéhé ^_^ **
+
+
+
