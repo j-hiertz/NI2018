@@ -18,13 +18,16 @@ export class GraphComponent implements OnInit {
 
   ngOnInit() {
       let my_position: any;
+      this.datas = [];
       this.meteoService.getPositionData().then((result) => {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
-            this.datas = {
-                temperature: data['main']['temp'],
-                name: data['name']
-            };
+            data['list'].forEach(function(d){
+              this.datas.append({
+                y: d['main']['temp'],
+                x: d['dt_txt']
+              });
+            }); 
         });
       });
     this.drawGraph();

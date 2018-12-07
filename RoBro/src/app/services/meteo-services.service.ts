@@ -9,7 +9,7 @@ export class MeteoService {
   private currentPos: any;
   private weatherData: any;
   private apiKey = '227130f473720185ee6c272ff86c89ad';
-  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 
   constructor(private http: HttpClient) { }
 
