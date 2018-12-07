@@ -29,7 +29,7 @@ Richard Pierre-Marie
 * Enjoy ! 
 
 
-** La famille vous remercie et vous souhaite une bonne expérience héhéhé ^_^ **
+**La famille vous remercie et vous souhaite une bonne expérience héhéhé ^_^**
 
 
 
