@@ -20,6 +20,7 @@ export class GraphComponent implements OnInit {
   ngOnInit() {
       let my_position: any;
       this.datas = [];
+      this.xLabels = [];
       this.meteoService.getPositionData().then((result) => {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
@@ -40,7 +41,7 @@ export class GraphComponent implements OnInit {
       type: 'line',
       data: {
           datasets: [{
-              label: 'Temperatures',
+              label: 'Température',
               data: this.datas
           }]
       },
@@ -51,7 +52,10 @@ export class GraphComponent implements OnInit {
               display: true,
               type: 'time',
                 time: {
-                    unit: 'hour'
+                    unit: 'hour',
+                    displayFormats: {
+                      'hour' : 'D/MM - H:mm'
+                    }
                 }
             }],
             yAxes: [{
