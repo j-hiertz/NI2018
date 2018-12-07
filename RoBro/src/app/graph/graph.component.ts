@@ -22,7 +22,12 @@ export class GraphComponent implements OnInit {
       let my_position: any;
       this.datas = [];
       this.instant_datas = {
-        humidity: 0
+        humidity: NaN,
+        pressure: NaN,
+        wind_speed: NaN,
+        wind_dir: NaN,
+        temp_min: NaN,
+        temp_max: NaN
       };
       this.meteoService.getPositionData().then((result) => {
         my_position = result;
@@ -39,7 +44,12 @@ export class GraphComponent implements OnInit {
 
         this.meteoService.getInstantMeteoData(my_position).subscribe((data: any) => {
           this.instant_datas = {
-            humidity: data['main']['humidity']
+            humidity: data['main']['humidity'],
+            pressure: data['main']['pressure'],
+            wind_speed: data['wind']['speed'],
+            wind_dir: data['wind']['deg'],
+            temp_min: data['main']['temp_min'],
+            temp_max: data['main']['temp_max']
           };
       });
       });

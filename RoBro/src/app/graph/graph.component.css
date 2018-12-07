@@ -8,3 +8,25 @@
     height: auto;
     width: auto;
 }
+
+.matContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, tr {
+    padding: 8px;
+}
+
+tr td:first-child {
+    font-weight: 500;
+}
+
+tr:nth-child(even){
+    background-color: #BDEEA5;
+}
