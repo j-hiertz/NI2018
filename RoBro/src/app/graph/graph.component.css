@@ -1,6 +1,6 @@
 .cardGraph {
     height: 95%;
-    width: 45%;
+    width: auto;
     margin: 20px;
 }
 
@@ -29,4 +29,13 @@ tr td:first-child {
 
 tr:nth-child(even){
     background-color: #BDEEA5;
+}
+
+@media screen and (max-width: 767px) {
+    .matContainer {
+        flex-direction: column;
+    }
+    .mat-card { 
+       width: 90%;
+    }
 }
