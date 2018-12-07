@@ -16,11 +16,17 @@ Hiertz Jordan
 
 Richard Pierre-Marie
 
+## Remarques: 
+
+En utilisant l'outil **Lighthouse**, on obtient un score de 100 pour la PWA.
+
 ## Prérequis:
+
  Il faut avoir installé **Node.js**.
  
  
 ## Installation:
+
 * Clonez le repository. 
 * Déplacez-vous dans le répertoire RoBro. 
 * Exécutez la commande : `npm install` 
