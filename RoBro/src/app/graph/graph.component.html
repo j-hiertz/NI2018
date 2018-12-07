@@ -1,19 +1,38 @@
-<!--
-<div class="center-div">
-	<h1>{{ title }}</h1>
-	<canvas #canvas id="canvas" width="500px" height="500px">{{ chart }}</canvas>
+<div class="matContainer">
+    <mat-card class="cardGraph mat-elevation-z6">
+        <mat-card-title>{{ title }}</mat-card-title>
+        <canvas #canvas id="canvas" width="500px" height="500px" class="canvas">{{ chart }}</canvas>
+    </mat-card>
+    <mat-card class="cardGraph mat-elevation-z6">
+        <mat-card-title>Donnée en temps réel</mat-card-title>
+        <table>
+            <tbody>
+                <tr>
+                    <td>Humidité (en %)</td>
+                    <td>{{ instant_datas.humidity }}</td>
+                </tr>
+                <tr>
+                    <td>Pression atmosph&eacute;rique (en Pa)</td>
+                    <td>{{ instant_datas.pressure }}</td>
+                </tr>
+                <tr>
+                    <td>Vitesse du vent (en km/h)</td>
+                    <td>{{ instant_datas.wind_speed }}</td>
+                </tr>
+                <tr>
+                    <td>Direction du vent (en degr&eacute;s)</td>
+                    <td>{{ instant_datas.wind_dir }}</td>
+                </tr>
+                <tr>
+                    <td>Temperature min (en °C)</td>
+                    <td>{{ instant_datas.temp_min }}</td>
+                </tr>
+                <tr>
+                    <td>Temperature max (en °C)</td>
+                    <td>{{ instant_datas.temp_max }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
 </div>
-.center-div{
-	 text-align: center;
-	 display: inline-block;
-	 width: 100%;
-}
-#canvas {
-	 margin: auto;
-}
-
--->
-<mat-card class="cardGraph mat-elevation-z6">
-	<mat-card-title>{{ title }}</mat-card-title>
-	<canvas #canvas id="canvas" width="500px" height="500px" class="canvas">{{ chart }}</canvas>
-</mat-card>
+>>>>>>> 0873012cdfb9d37a0d8131b46f587212b697a119

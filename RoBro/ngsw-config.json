@@ -2,7 +2,7 @@
   "index": "/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "RoBro",
       "installMode": "prefetch",
       "resources": {
         "files": [

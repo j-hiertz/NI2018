@@ -10,6 +10,20 @@
         display: flex;
     }
 }
+
+.mat-card {
+    background-color: #EBF9E4;
+}
+
+.mat-icon {
+    color: white;
+    font-size: 36px;
+}
+
+.mat-drawer {
+    background-color: #718e63;
+}
+
 .mat-card div {
     text-align: center;
     display: flex;
@@ -43,4 +57,11 @@
     font-size: 30px;
     font-weight: bold;
     margin: 0 5px;
+}
+.my_desert{
+    height: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
 }
