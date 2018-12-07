@@ -9,7 +9,7 @@ export class MeteoService {
   private currentPos: any;
   private weatherData: any;
   private apiKey = '227130f473720185ee6c272ff86c89ad';
-  private apiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
+  private apiUrl = 'https://api.openweathermap.org/data/2.5/';
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,10 @@ export class MeteoService {
   }
 
   public getMeteoData(position): any {
-      return this.http.get(`${this.apiUrl}?lat=${position.latitude}&lon=${position.longitude}&units=metric&appid=${this.apiKey} `);
+      return this.http.get(`${this.apiUrl}forecast?lat=${position.latitude}&lon=${position.longitude}&units=metric&appid=${this.apiKey} `);
   }
+
+  public getInstantMeteoData(position): any {
+    return this.http.get(`${this.apiUrl}weather?lat=${position.latitude}&lon=${position.longitude}&units=metric&appid=${this.apiKey} `);
+}
 }

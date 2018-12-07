@@ -10,6 +10,20 @@
         display: flex;
     }
 }
+
+.mat-card {
+    background-color: #EBF9E4;
+}
+
+.mat-icon {
+    color: white;
+    font-size: 36px;
+}
+
+.mat-drawer {
+    background-color: #718e63;
+}
+
 .mat-card div {
     text-align: center;
     display: flex;
@@ -27,6 +41,15 @@
 #icon_app:hover {
     transform: rotate( -180deg );
     transition: transform 150ms ease;
+}
+
+#icon_truc {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 200px;
+    right: -100px;
+    transform: rotate(90deg);
 }
 
 .mat-card span {
