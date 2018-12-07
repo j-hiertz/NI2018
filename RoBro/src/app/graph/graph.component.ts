@@ -11,6 +11,7 @@ export class GraphComponent implements OnInit {
 
   private chart: any;
   private datas: any;
+  private xLabels: any;
   @ViewChild('canvas') private chartRef: ElementRef;
 
   constructor(private meteoService: MeteoService) {
@@ -19,17 +20,18 @@ export class GraphComponent implements OnInit {
   ngOnInit() {
       let my_position: any;
       this.datas = [];
+      this.xLabels = [];
       this.meteoService.getPositionData().then((result) => {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
             data['list'].forEach((d) => {
-              console.log(d['dt_txt']);
+              this.xLabels.push(d['dt_txt']);
               this.datas.push({
                 y: d['main']['temp'],
                 x: new Date(d['dt_txt'])
               });
             });
-            console.log(this.datas);
+            console.log(this.xLabels);
             this.drawGraph();
         });
       });
@@ -40,9 +42,10 @@ export class GraphComponent implements OnInit {
       type: 'line',
       data: {
           datasets: [{
-              label: 'firstLabel',
+              label: 'Température',
               data: this.datas
           }]
+          
       },
       options: {
           responsive: false,
@@ -51,7 +54,10 @@ export class GraphComponent implements OnInit {
               display: true,
               type: 'time',
                 time: {
-                    unit: 'hour'
+                    unit: 'hour',
+                    displayFormats: {
+                      'hour' : 'D/MM - H:mm'
+                    }
                 }
             }],
             yAxes: [{

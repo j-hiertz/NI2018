@@ -29,6 +29,6 @@ export class MeteoService {
   }
 
   public getMeteoData(position): any {
-      return this.http.get(`${this.apiUrl}?lat=${position.latitude}&lon=${position.longitude}&appid=${this.apiKey} `);
+      return this.http.get(`${this.apiUrl}?lat=${position.latitude}&lon=${position.longitude}&units=metric&appid=${this.apiKey} `);
   }
 }
