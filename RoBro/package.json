@@ -24,6 +24,7 @@
     "@angular/router": "~7.1.0",
     "@angular/service-worker": "~7.1.0",
     "@types/leaflet": "^1.2.14",
+    "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
     "d3": "^5.7.0",
     "dc": "^3.0.9",
