@@ -1,4 +1,10 @@
-<p>Liste des rappels</p>
-<mat-list role="list">
-  <mat-list-item role="listitem" *ngFor="let recall of recalls">{{ recall.title }} {{ recall.deadline }}</mat-list-item>
-</mat-list>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Liste des rappels</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item role="listitem" *ngFor="let recall of recalls"><mat-icon>notifications</mat-icon> {{ recall.deadline }} : {{ recall.title }}</mat-list-item>
+    </mat-list> 
+  </mat-card-content>
+</mat-card>

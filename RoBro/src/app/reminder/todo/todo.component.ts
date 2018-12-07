@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-
-  constructor() { }
+  private todos;
+  
+  constructor(private todoService: TodoService) { }
 
   ngOnInit() {
+    this.todoService.getTodos().subscribe(response => {
+      this.todos = response;
+    });
   }
 
+  private removeTodo(id: String){
+    this.todoService.removeTodo(id);
+  }
 }
