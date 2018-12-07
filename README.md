@@ -1,7 +1,7 @@
 # NI2018
 Prototype du sujet national développé pour la nuit de l'info 2018
 
-## Auteurs:
+## Auteurs
 Abdoul-Malik Emilie
 
 Azzouz Mohamed 
@@ -16,16 +16,16 @@ Hiertz Jordan
 
 Richard Pierre-Marie
 
-## Remarques: 
+## Remarques 
 
 En utilisant l'outil **Lighthouse**, on obtient un score de 100 pour la PWA.
 
-## Prérequis:
+## Prérequis
 
  Il faut avoir installé **Node.js**.
  
  
-## Installation:
+## Installation
 
 * Clonez le repository. 
 * Déplacez-vous dans le répertoire RoBro. 
