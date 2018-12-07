@@ -3,13 +3,13 @@
 }
 
 @media screen and (min-width: 767px) {
-    .drawer {
-        display:none;
+        .drawer {
+            display:none;
+        }
+    .mat-card {
+        display: flex;
     }
-.mat-card {
-    display: flex;
 }
-
 .mat-card div {
     text-align: center;
     display: flex;
