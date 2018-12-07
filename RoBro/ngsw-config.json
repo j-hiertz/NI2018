@@ -21,6 +21,15 @@
           "/assets/**"
         ]
       }
+    }, {
+      "name": "string",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "urls": [
+          "https://jsonplaceholder.typicode.com/todos"
+        ]
+      }
     }
   ]
 }

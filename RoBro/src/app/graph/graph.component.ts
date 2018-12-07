@@ -9,12 +9,12 @@ import { MeteoService } from '../services/meteo-services.service';
 })
 export class GraphComponent implements OnInit {
 
-  private chart: any;
-  private datas: any;
-  private instant_datas: any;
-  private title: String = 'Metéo pour votre localisation';
-  @ViewChild('canvas') private chartRef: ElementRef;
+  public chart: any;
+  public datas: any;
+  public instant_datas: any;
+  public title: String = 'Metéo pour votre localisation';
 
+  @ViewChild('canvas') private chartRef: ElementRef;
   constructor(private meteoService: MeteoService) {
   }
 
@@ -56,7 +56,7 @@ export class GraphComponent implements OnInit {
   }
 
   drawGraph() {
-    var chartColors = {
+    const chartColors = {
       blue : '#0076ce'
     };
     this.chart = new Chart(this.chartRef.nativeElement, {
@@ -64,7 +64,7 @@ export class GraphComponent implements OnInit {
       data: {
           datasets: [{
               label: 'Température',
-              fill: false, 
+              fill: false,
               borderColor: chartColors.blue,
               data: this.datas,
           }]
