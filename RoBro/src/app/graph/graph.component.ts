@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef  } from '@angular/core';
 import { Chart } from 'chart.js';
+import { MeteoService } from '../services/meteo-services.service';
 
 @Component({
   selector: 'app-graph',
@@ -8,28 +9,37 @@ import { Chart } from 'chart.js';
 })
 export class GraphComponent implements OnInit {
 
-  private data: any;
   private chart: any;
+  private datas: any;
   @ViewChild('canvas') private chartRef: ElementRef;
 
-  constructor() {
-    this.data = [
-      {'x': 0, 'y': 34},
-      {'x': 1, 'y': 32},
-      {'x': 2, 'y': 37},
-      {'x': 3, 'y': 28},
-      {'x': 4, 'y': 25}
-    ];
+  constructor(private meteoService: MeteoService) {
   }
 
   ngOnInit() {
+      let my_position: any;
+      this.meteoService.getPositionData().then((result) => {
+        my_position = result;
+        this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
+            this.datas = {
+                temperature: data['main']['temp'],
+                name: data['name']
+            };
+        });
+      });
     this.drawGraph();
   }
 
   drawGraph() {
     this.chart = new Chart(this.chartRef.nativeElement, {
       type: 'line',
-      data: [{'x': 0, 'y': 34}, {'x': 1, 'y': 32}, {'x': 2, 'y': 37}, {'x': 3, 'y': 28}, {'x': 4, 'y': 25}],
+      data: {
+          datasets: [{
+              label: 'firstLabel',
+              data: [34, 32, 37, 28, 25],
+          }],
+          labels: ['01/12/2018', '02/12/2018', '03/12/2018', '04/12/2018', '05/12/2018']
+      },
       options: {
           responsive: false,
           scales: {
@@ -37,16 +47,9 @@ export class GraphComponent implements OnInit {
               display: true
             }],
             yAxes: [{
-                display: true,
-                ticks: {
-                    min: 0,
-                    max: 34,
-                    stepSize: 1
-                }
+                display: true
             }]
           }}
     });
-    console.log(this.chart);
   }
-
 }
