@@ -1,10 +1,10 @@
 <mat-card>
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button class="drawer">
+    <mat-icon >menu</mat-icon>
   </button>
 </mat-card>
 <mat-drawer-container>
-  <mat-drawer mode="side" opened>
+  <mat-drawer mode="side" opened >
     <mat-list role="list">
       <mat-list-item role="listitem"><a [routerLink]="['/reminder']"><mat-icon>format_list_bulleted</mat-icon></a></mat-list-item>
       <mat-list-item role="listitem"><a [routerLink]="['/maps']"><mat-icon>map</mat-icon></a></mat-list-item>
