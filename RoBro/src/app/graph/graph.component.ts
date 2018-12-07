@@ -11,6 +11,7 @@ export class GraphComponent implements OnInit {
 
   private chart: any;
   private datas: any;
+  private title: String = 'Meteo pour votre localisation';
   @ViewChild('canvas') private chartRef: ElementRef;
 
   constructor(private meteoService: MeteoService) {
@@ -23,13 +24,12 @@ export class GraphComponent implements OnInit {
         my_position = result;
         this.meteoService.getMeteoData(my_position).subscribe((data: any) => {
             data['list'].forEach((d) => {
-              console.log(d['dt_txt']);
               this.datas.push({
                 y: d['main']['temp'],
                 x: new Date(d['dt_txt'])
               });
             });
-            console.log(this.datas);
+            this.title = `Meteo pour ${data['city']['name']}`;
             this.drawGraph();
         });
       });
@@ -40,7 +40,7 @@ export class GraphComponent implements OnInit {
       type: 'line',
       data: {
           datasets: [{
-              label: 'firstLabel',
+              label: 'Temperatures',
               data: this.datas
           }]
       },
