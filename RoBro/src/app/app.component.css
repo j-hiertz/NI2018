@@ -6,4 +6,32 @@
     .drawer {
         display:none;
     }
+.mat-card {
+    display: flex;
+}
+
+.mat-card div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+#icon_app {
+    width: 40px;
+    height: 40px;
+    transform: rotate( 0deg );
+    transition: transform 150ms ease;
+}
+
+#icon_app:hover {
+    transform: rotate( -180deg );
+    transition: transform 150ms ease;
+}
+
+.mat-card span {
+    color: green;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 5px;
 }
