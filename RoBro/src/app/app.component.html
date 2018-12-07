@@ -6,9 +6,9 @@
 <mat-drawer-container>
   <mat-drawer mode="side" opened>
     <mat-list role="list">
-      <mat-list-item role="listitem"><a [routerLink]="['/reminder']">Reminder</a></mat-list-item>
-      <mat-list-item role="listitem"><a [routerLink]="['/maps']">Maps</a></mat-list-item>
-      <mat-list-item role="listitem"><a [routerLink]="['/graph']">Graph</a></mat-list-item>
+      <mat-list-item role="listitem"><a [routerLink]="['/reminder']"><mat-icon>format_list_bulleted</mat-icon></a></mat-list-item>
+      <mat-list-item role="listitem"><a [routerLink]="['/maps']"><mat-icon>map</mat-icon></a></mat-list-item>
+      <mat-list-item role="listitem"><a [routerLink]="['/graph']"><mat-icon>poll</mat-icon></a></mat-list-item>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
