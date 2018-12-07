@@ -11,7 +11,7 @@ export class GraphComponent implements OnInit {
 
   private chart: any;
   private datas: any;
-  private title: String = 'Meteo pour votre localisation';
+  private title: String = 'Metéo pour votre localisation';
   @ViewChild('canvas') private chartRef: ElementRef;
 
   constructor(private meteoService: MeteoService) {
@@ -29,19 +29,24 @@ export class GraphComponent implements OnInit {
                 x: new Date(d['dt_txt'])
               });
             });
-            this.title = `Meteo pour ${data['city']['name']}`;
+            this.title = `Metéo pour ${data['city']['name']}`;
             this.drawGraph();
         });
       });
   }
 
   drawGraph() {
+    var chartColors = {
+      blue : '#0076ce'
+    };
     this.chart = new Chart(this.chartRef.nativeElement, {
       type: 'line',
       data: {
           datasets: [{
               label: 'Température',
-              data: this.datas
+              fill: false, 
+              borderColor: chartColors.blue,
+              data: this.datas,
           }]
       },
       options: {
