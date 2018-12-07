@@ -8,16 +8,16 @@ import { TodoService } from './todo.service';
 })
 export class TodoComponent implements OnInit {
   private todos;
-  
+
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
     this.todoService.getTodos().subscribe(response => {
-      this.todos = response;
+      this.todos = response.slice(0, 15);
     });
   }
 
-  private removeTodo(id: String){
+  private removeTodo(id: String) {
     this.todoService.removeTodo(id);
   }
 }

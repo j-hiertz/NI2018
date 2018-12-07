@@ -1,3 +1,5 @@
 export class Todo {
-    content: String;
+    userId: Number;
+    title: String;
+    completed: Boolean;
 }
